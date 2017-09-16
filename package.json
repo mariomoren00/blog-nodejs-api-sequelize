@@ -1,0 +1,23 @@
+{
+  "name": "blog-nodejs-api-sequelize",
+  "version": "1.0.0",
+  "description": "Using nodejs with express and sequelize to create a API REST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariomoren00/blog-nodejs-api-sequelize.git"
+  },
+  "author": "mariomoreno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariomoren00/blog-nodejs-api-sequelize/issues"
+  },
+  "homepage": "https://github.com/mariomoren00/blog-nodejs-api-sequelize#readme",
+  "dependencies": {
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.8.4"
+  }
+}

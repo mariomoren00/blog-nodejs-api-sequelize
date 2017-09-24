@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('', 'root', '', {
+const sequelize = new Sequelize('', 'root', 'youpassword', {
   host: '127.0.0.1',
   dialect: 'mysql',
   pool: {
@@ -16,11 +16,11 @@ const Pais = sequelize.define('cat_pais', {
     updated_by: Sequelize.INTEGER,
     deleted: Sequelize.BOOLEAN
   }, {
-    tableName: 'cat_pais',    
+    tableName: 'cat_pais',
     updatedAt: 'updated_at',
     createdAt: 'created_at'
   });
-  
+
   const Estado = sequelize.define('cat_estado', {
     etiqueta: Sequelize.STRING(100),
     abreviatura: Sequelize.STRING(10),
@@ -44,19 +44,19 @@ const Pais = sequelize.define('cat_pais', {
     updatedAt: 'updated_at',
     createdAt: 'created_at'
   });
-  
+
   Pais.hasMany(Estado, { foreignKey: 'id_pais'} );
   Estado.belongsTo(Pais, { foreignKey: 'id_pais'} );
-  
+
   Estado.hasMany(Municipio, { foreignKey: 'id_estado'} );
   Municipio.belongsTo(Estado, { foreignKey: 'id_estado'} );
-  
 
-  /*
-  Pais.findAll({ include: [ Estado ], where: { id: 1 } }).then(pais => {
+
+
+  /*Pais.findAll({ include: [ Estado ], where: { id: 1 } }).then(pais => {
     console.log(JSON.stringify(pais));
   });
-  */
+*/
 
   /*
   Pais.findAll({ include: [ Estado ], where: {id: 1}}).then(pais => {
@@ -82,6 +82,6 @@ const Pais = sequelize.define('cat_pais', {
   });
   */
 
-  /*Municipio.findAll({ include: [ Estado ] , where: { id: 1 } }).then(municipio => {
+  Municipio.findAll({ include: [ Estado ] , where: { id: 1 } }).then(municipio => {
     console.log(JSON.stringify(municipio));
-  });*/
+  });
